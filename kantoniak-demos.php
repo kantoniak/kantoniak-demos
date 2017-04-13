@@ -13,6 +13,8 @@ namespace kantoniak {
 
 class Demos {
 
+  const VERSION = '0.0.0';
+
   const PLUGIN_SLUG = 'kantoniak-demos';
   const SHORTCODE_NAME = 'demo';
   const SHORTCODE_OPTION_URL = 'url';
@@ -21,19 +23,22 @@ class Demos {
   public function __construct() {
     add_shortcode(Demos::SHORTCODE_NAME, array($this, 'handleShortcode'));
     if (is_admin()) {
-      add_action('admin_head', array($this, 'addAdminStylesheet'));
+      add_action('admin_head', array($this, 'addAdminResources'));
       add_action('media_buttons', array($this, 'addMediaButton'));
     } else {
       add_action('wp_enqueue_scripts', array($this, 'addStylesheet'));
     }
   }
 
-  public function addAdminStylesheet() {
+  public function addAdminResources() {
     wp_enqueue_style(Demos::PLUGIN_SLUG, plugins_url(Demos::PLUGIN_SLUG . '/css/admin.css'));
+    wp_enqueue_script(Demos::PLUGIN_SLUG.'-script-admin',  plugins_url(Demos::PLUGIN_SLUG . '/js/admin.js'), array('jquery'), Demos::VERSION, true);
   }
 
   public function addMediaButton() {
-    echo '<a href="#" id="kantoniak-demos-insert" class="button"><span></span>Add demo</a>';
+    add_thickbox();
+    echo $this->loadTemplate('popup-add');
+    echo '<a href="" id="kantoniak-demos-insert" class="button"><span></span>Add demo</a>';
   }
 
   public function addStylesheet() {
@@ -51,7 +56,7 @@ class Demos {
     );
   }
 
-  private function loadTemplate($templateName, $data) {
+  private function loadTemplate($templateName, $data = []) {
     ob_start();
     include('template-'. $templateName .'.php');
     return ob_get_clean();

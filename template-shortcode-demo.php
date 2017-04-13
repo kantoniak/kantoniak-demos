@@ -1,7 +1,9 @@
 <div class="kantoniak-demo demo">
+  <?php if (!empty($data['content'])): ?>
   <div class="content">
-    <?php echo $data['content']; ?>
+      <?php echo $data['content']; ?>
   </div>
+  <?php endif; ?>
   <?php
     if (!empty($data['url']) || !empty($data['list_url'])):
     echo '<div class="buttons">';

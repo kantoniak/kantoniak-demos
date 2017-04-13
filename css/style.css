@@ -1,5 +1,6 @@
 .kantoniak-demo { margin: 0 0 1.625em 0; padding: 1.625em; text-align: center; background: #FCFCFC; border: 1px solid #E5E5E5; }
 .kantoniak-demo .buttons { margin-top: 0.825em; display: flex; align-content: stretch; }
+.kantoniak-demo .buttons:first-child { margin-top: 0; }
 .kantoniak-demo .buttons a { flex-grow: 1; margin-right: 1.125em; padding: 0.625em; text-decoration: none; background: #FCFCFC; border: 1px solid #E5E5E5; }
 .kantoniak-demo .buttons a:last-child { margin-right: 0; }
 .kantoniak-demo .buttons a:hover { border-color: #1982D1; }

@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Demo shortcodes
-Plugin URI: 
+Plugin URI: https://github.com/kantoniak/kantoniak-demos/
 Description: This plugin adds [demo] shortcode to your articles.
-Version: 0.0.0
+Version: 0.0.1
 Author: Krzysztof Antoniak
 Author URI: http://antoniak.in/
 License: GNU General Public License, version 3.0 (GPL-3.0)
@@ -13,7 +13,7 @@ namespace kantoniak {
 
 class Demos {
 
-  const VERSION = '0.0.0';
+  const VERSION = '0.0.1';
 
   const PLUGIN_SLUG = 'kantoniak-demos';
   const SHORTCODE_NAME = 'demo';

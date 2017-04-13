@@ -1,6 +1,16 @@
 # Demos Plugin
 
-This plugin inserts demo box inside article.
+This plugin inserts a demo box inside article.
+
+<p align="center">
+  <img src="readme/preview.png" align="center" />
+</p>
+
+## Features
+
+* Set custom demo content
+* Optional button to show "See demo" link
+* Optional button to show "See all demos" link
 
 ## Installation
 

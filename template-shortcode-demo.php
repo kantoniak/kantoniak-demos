@@ -1,3 +1,5 @@
 <div class="kantoniak-demo demo">
-  <p>Demo contents</p>
+  <div class="content">
+    <?php echo $data['content']; ?>
+  </div>
 </div>

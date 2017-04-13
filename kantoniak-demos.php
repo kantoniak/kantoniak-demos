@@ -26,8 +26,14 @@ class Demos {
     wp_enqueue_style(Demos::PLUGIN_SLUG, plugins_url(Demos::PLUGIN_SLUG . '/css/style.css')); 
   }
 
-  public function handleShortcode() {
-    return $this->loadTemplate('shortcode-demo', []);
+  public function handleShortcode($attributes, $content = '') {
+    return $this->loadTemplate(
+      'shortcode-demo',
+      array(
+        'attributes' => $attributes,
+        'content' => $content
+      )
+    );
   }
 
   private function loadTemplate($templateName, $data) {

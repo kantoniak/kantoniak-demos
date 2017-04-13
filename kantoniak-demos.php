@@ -49,8 +49,8 @@ class Demos {
     return $this->loadTemplate(
       'shortcode-demo',
       array(
-        'url' => $attributes[Demos::SHORTCODE_OPTION_URL],
-        'list_url' => $attributes[Demos::SHORTCODE_OPTION_LIST_URL],
+        'url' => isset($attributes[Demos::SHORTCODE_OPTION_URL]) ? $attributes[Demos::SHORTCODE_OPTION_URL] : '',
+        'list_url' => isset($attributes[Demos::SHORTCODE_OPTION_LIST_URL]) ? $attributes[Demos::SHORTCODE_OPTION_LIST_URL] : '',
         'content' => $content
       )
     );

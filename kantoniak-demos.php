@@ -14,9 +14,12 @@ namespace kantoniak {
 class Demos {
 
   const PLUGIN_SLUG = 'kantoniak-demos';
+  const SHORTCODE_NAME = 'demo';
+  const SHORTCODE_OPTION_URL = 'url';
+  const SHORTCODE_OPTION_LIST_URL = 'list_url';
 
   public function __construct() {
-    add_shortcode('demo', array($this, 'handleShortcode'));
+    add_shortcode(Demos::SHORTCODE_NAME, array($this, 'handleShortcode'));
     if (!is_admin()) {
         add_action('wp_enqueue_scripts', array($this, 'addStylesheet'));
     }
@@ -30,7 +33,8 @@ class Demos {
     return $this->loadTemplate(
       'shortcode-demo',
       array(
-        'attributes' => $attributes,
+        'url' => $attributes[Demos::SHORTCODE_OPTION_URL],
+        'list_url' => $attributes[Demos::SHORTCODE_OPTION_LIST_URL],
         'content' => $content
       )
     );

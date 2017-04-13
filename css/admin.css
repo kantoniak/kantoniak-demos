@@ -1,1 +1,19 @@
 #kantoniak-demos-insert span { display: inline-block; height: 16px; width: 16px; margin: 5px 6px 0 0; vertical-align: top; background: url(../images/icon-16.png) no-repeat center center; }
+.kantoniak-demos-popup-content { padding: 10px; }
+.kantoniak-demos-popup-content th { width: 100px; }
+.kantoniak-demos-popup-content td { padding-right: 0; }
+.kantoniak-demos-popup-content tr:first-child td { padding-bottom: 0; }
+.kantoniak-demos-popup-content div {
+    overflow: hidden;
+    border-top: 1px solid #CCC;
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-bottom: 2px; }
+
+.kantoniak-demos-popup-content input[type=text] { width: 400px; }
+.kantoniak-demos-popup-content input[name=submit] { float: left; margin-right: 1em; }
+#TB_window #TB_ajaxContent .kantoniak-demos-popup-content div p {
+    line-height: 30px;
+    margin-top: 0;
+    padding-top: 0;
+}
